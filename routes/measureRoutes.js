@@ -1,10 +1,13 @@
+/* routes/measureRoutes.js */
+
 var express = require('express');
 var router = express.Router();
 var measurements = require('../controllers/measureControllers');
 
-router.post('/', measurements.postMeasurement);
+var passport = require('passport')
+var basicAuth = passport.authenticate('basic', { session: false })
 
-router.get('/latest/', measurements.getLatestMeasurement);
-
+router.post('/', basicAuth, measurements.postMeasurement);
+router.get('/latest/', basicAuth, measurements.getLatestMeasurement);
 
 module.exports = router;
