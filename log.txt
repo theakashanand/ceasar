@@ -1,0 +1,3 @@
+Temperature: 22 Light: 71
+Temperature: 5 Light: 28
+Temperature: 12 Light: 33
